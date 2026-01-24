@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Redirect</title>
-    <script type="text/javascript">
-      var pathSegmentsToKeep = 0;
 
-      var l = window.location;
-      l.replace(
-        l.protocol +
-          "//" +
-          l.hostname +
-          (l.port ? ":" + l.port : "") +
-          l.pathname
-            .split("/")
-            .slice(0, 1 + pathSegmentsToKeep)
-            .join("/") +
-          "/?/" +
-          l.pathname.slice(1).split("/").slice(pathSegmentsToKeep).join("/").replace(/&/g, "~and~") +
-          (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
-          l.hash
-      );
-    </script>
-  </head>
-  <body></body>
+<head>
+  <meta charset="utf-8" />
+  <title>Redirect</title>
+  <script type="text/javascript">
+    var pathSegmentsToKeep = 0;
+
+    var l = window.location;
+    l.replace(
+      l.protocol +
+      "//" +
+      l.hostname +
+      (l.port ? ":" + l.port : "") +
+      l.pathname
+        .split("/")
+        .slice(0, 1 + pathSegmentsToKeep)
+        .join("/") +
+      "/?/" +
+      l.pathname.slice(1).split("/").slice(pathSegmentsToKeep).join("/").replace(/&/g, "~and~") +
+      (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+      l.hash
+    );
+  </script>
+  <!-- Histats.com  START  (aync)-->
+  <script type="text/javascript">var _Hasync = _Hasync || [];
+    _Hasync.push(['Histats.start', '1,4570309,4,0,0,0,00010000']);
+    _Hasync.push(['Histats.fasi', '1']);
+    _Hasync.push(['Histats.track_hits', '']);
+    (function () {
+      var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+      hs.src = ('//s10.histats.com/js15_as.js');
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+    })();</script>
+  <noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4570309&101" alt="web stats"
+        border="0"></a></noscript>
+  <!-- Histats.com  END  -->
+</head>
+
+<body></body>
+
 </html>
-
