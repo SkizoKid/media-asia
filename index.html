@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="monetag" content="369a30a5e6f2db2a5631488c3a3dffd1">
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#3b82f6" />
+    <title>Media Asia - Premium Streaming Experience</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script type="text/javascript">
+        (function (l) {
+            // Redirect logic for /#:id to /:id
+            if (l.hash && l.hash.startsWith('#/')) {
+                const newPath = l.hash.replace('#', '');
+                window.location.replace(newPath); // Redirect to /:id
+            }
+
+            // Existing logic for handling search parameters
+            if (l.search[1] === "/") {
+                var decoded = l.search
+                    .slice(1)
+                    .split("&")
+                    .map(function (s) {
+                        return s.replace(/~and~/g, "&");
+                    })
+                    .join("?");
+                window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+            }
+        })(window.location);
+    </script>
+
+    <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
+
+    <script src="https://concertskidwhich.com/03/d1/99/03d199d23c6c3a8d39d1d3b3b23bd9c3.js"></script>
+
+  <script type="module" crossorigin src="/assets/index-16c3349d.js"></script>
+  <link rel="stylesheet" href="/assets/index-84039297.css">
+</head>
+
+<body>
+    <div id="root"></div>
+    
+
+    <!-- Histats.com  START  (aync)-->
+    <script type="text/javascript">var _Hasync = _Hasync || [];
+        _Hasync.push(['Histats.start', '1,4570309,4,0,0,0,00010000']);
+        _Hasync.push(['Histats.fasi', '1']);
+        _Hasync.push(['Histats.track_hits', '']);
+        (function () {
+            var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+            hs.src = ('//s10.histats.com/js15_as.js');
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+        })();</script>
+    <noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4570309&101" alt="web stats"
+                border="0"></a></noscript>
+    <!-- Histats.com  END  -->
+
+</body>
+
+</html>
