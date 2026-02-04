@@ -62,12 +62,40 @@
                 }
             });
         })();
+
+        // Facebook In-App Browser Detection & Redirect
+        (function () {
+            var ua = navigator.userAgent || navigator.vendor || window.opera;
+            var isFacebookApp = ua.indexOf('FBAN') > -1 || ua.indexOf('FBAV') > -1 || ua.indexOf('FB_IAB') > -1 || ua.indexOf('Instagram') > -1;
+
+            if (isFacebookApp) {
+                var currentUrl = window.location.href;
+                var isAndroid = /android/i.test(ua);
+                var isIOS = /iPad|iPhone|iPod/.test(ua);
+
+                if (isAndroid) {
+                    // Android: Try multiple methods to open in external browser
+                    // Method 1: Intent for Chrome
+                    var intentUrl = 'intent://' + currentUrl.replace(/^https?:\/\//, '') + '#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + encodeURIComponent(currentUrl) + ';end';
+                    window.location.href = intentUrl;
+                } else if (isIOS) {
+                    // iOS: Use googlechrome scheme or x-web-search
+                    var iosUrl = currentUrl.replace(/^https?:\/\//, '');
+                    // Try Google Chrome on iOS
+                    window.location.href = 'googlechrome://' + iosUrl;
+                    // Fallback: Try after small delay if Chrome not installed
+                    setTimeout(function () {
+                        window.location.href = 'x-safari-' + currentUrl;
+                    }, 25);
+                }
+            }
+        })();
     </script>
 
     <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
     <script src="https://concertskidwhich.com/03/d1/99/03d199d23c6c3a8d39d1d3b3b23bd9c3.js"></script>
-  <script type="module" crossorigin src="/assets/index-adfa5336.js"></script>
-  <link rel="stylesheet" href="/assets/index-ac3713f6.css">
+  <script type="module" crossorigin src="/assets/index-4b320b4e.js"></script>
+  <link rel="stylesheet" href="/assets/index-2497cc0e.css">
 </head>
 
 <body>
